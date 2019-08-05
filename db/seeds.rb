@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do 
-  Game.create(score: Faker::Number.number(digits: 6))
-end
+Game.create(user_id: 1, score: 8)
+Game.create(user_id: 2, score: 18)
+Game.create(user_id: 3, score: 118)
