@@ -4,11 +4,6 @@ class GamesController < ApplicationController
     render json: game
   end
 
-  def show
-    game = Game.find_by(id: params[:id])
-    render json: game
-  end
-
   def index
     games = Game.all
     render json: games
@@ -16,6 +11,6 @@ class GamesController < ApplicationController
 
   private
     def game_params
-      params.require(:game).permit(:user_id, :score)
+      params.require(:game).permit(:player_name, :score)
     end
 end

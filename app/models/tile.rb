@@ -1,2 +1,0 @@
-class Tile < ApplicationRecord
-end
