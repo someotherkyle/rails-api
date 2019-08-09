@@ -10,13 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_180204) do
+ActiveRecord::Schema.define(version: 2019_08_09_140003) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "games", force: :cascade do |t|
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "player_name"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content", limit: 4294967295
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
