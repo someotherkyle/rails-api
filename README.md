@@ -11,4 +11,4 @@ Simply clone this repo, cd into it and run `bundle install`, `rails db:migrate` 
 
 You are welcome to utilize any of the code in this repository. I did not create the game 2048, I merely challenged myself to reproduce it. As such, I would encourage anyone interested to create their own and use this code as a guide. Code contributions for this project would defeat the purpose of the challenge I set for myself but critiques and improvements are always welcome.
 
-License information: MIT (see LICENSE) © Kyle Smith
+License information: MIT (see LICENSE) © Kyle Smith  
