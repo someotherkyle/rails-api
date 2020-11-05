@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_17_131457) do
+ActiveRecord::Schema.define(version: 2020_11_05_004938) do
+
+  create_table "action_tables", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "name"
@@ -18,6 +23,23 @@ ActiveRecord::Schema.define(version: 2019_08_17_131457) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "post_id"
+  end
+
+  create_table "equipment_tables", force: :cascade do |t|
+    t.integer "quantity_installed_in_floc"
+    t.string "equipment_description"
+    t.string "quote_filename"
+    t.integer "equipment_number"
+    t.integer "quote_line_number"
+    t.integer "max_quantity"
+    t.integer "reorder_quantity"
+    t.string "stock_reason"
+    t.integer "stock_method_id"
+    t.boolean "over_approval_limit"
+  end
+
+  create_table "floc_tables", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "games", force: :cascade do |t|
@@ -29,9 +51,40 @@ ActiveRecord::Schema.define(version: 2019_08_17_131457) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.text "content", limit: 4294967295
+    t.text "content", limit: 999999999
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "requests_tables", force: :cascade do |t|
+    t.integer "action_id"
+    t.integer "creating_user_id"
+    t.integer "last_modified_user"
+    t.integer "floc_id"
+    t.string "comments"
+    t.integer "status_id"
+  end
+
+  create_table "restocking_method_tables", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+  end
+
+  create_table "roles_tables", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+  end
+
+  create_table "status_tables", force: :cascade do |t|
+    t.string "name"
+    t.integer "actionable_role_id"
+  end
+
+  create_table "user_tables", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "email"
+    t.integer "role_id"
   end
 
 end
