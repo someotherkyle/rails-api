@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :password, confirmation: true
 
   # relationships
-  # eg: has_many :requests
   has_many :sap_requests
+  belongs_to :role
 end
