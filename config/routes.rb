@@ -3,4 +3,5 @@ Rails.application.routes.draw do
     resources :games, only: [:index, :create]
     resources :comments, only: [:index, :create]
     resources :posts, only: [:index, :create, :show]
+    resources :users, only: [:index, :create, :show]
 end
